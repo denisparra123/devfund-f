@@ -53,13 +53,13 @@ public class MovieTest {
     }
 
     /**
-     * test getters and setters for actors
+     * test getters and setters for actors.
      */
     @Test
     public void testactorsGetSet() {
         Actor actor = new Actor();
         actor.setName("actor name");
-        List<Actor> actors = new ArrayList <>();
+        List<Actor> actors = new ArrayList<>();
         actors.add(actor);
         movie.setActors(actors);
         assertEquals(actor.getName(), movie.getActors().get(0).getName());
