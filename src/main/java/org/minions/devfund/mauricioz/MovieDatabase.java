@@ -97,7 +97,7 @@ public class MovieDatabase {
      */
     public String getBestActor() {
         String bestActorName = "";
-        double averageMovieRating = 0.0;
+        double averageMovieRating = -1.0;
         for (Actor actor : this.actors) {
             if (actor.ratingAverage() > averageMovieRating) {
                 averageMovieRating = actor.ratingAverage();

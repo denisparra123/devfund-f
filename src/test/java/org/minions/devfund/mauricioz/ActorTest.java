@@ -20,14 +20,13 @@ public class ActorTest {
     private Actor actor;
     private Movie mov1;
     private Movie mov2;
-    private List<Movie> movies;
 
     /**
      * before setup of execution.
      */
     @Before
     public void setUp() {
-
+        List<Movie> movies;
         actor = new Actor();
         mov1 = new Movie("Avengers Infinity War");
         mov2 = new Movie("Iron Man");

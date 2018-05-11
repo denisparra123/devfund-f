@@ -3,6 +3,7 @@ package org.minions.devfund.mauricioz;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -13,16 +14,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class MovieDatabaseTest {
     private MovieDatabase movieDB;
     private String movieName;
-    private String[] actor;
     private Actor newActor;
-    private String mov1;
-    private String mov2;
 
     /**
      * before test cases setup.
      */
     @Before
     public void setUp() {
+        String[] actor;
+        String mov1;
+        String mov2;
         movieDB = new MovieDatabase();
         movieName = "Sleepers";
         mov1 = "Avengers Infinity War";
@@ -33,8 +34,6 @@ public class MovieDatabaseTest {
         movieDB.addMovie(mov2, actor);
         newActor = new Actor();
         newActor.setName(actor[0]);
-
-
     }
 
     /**
