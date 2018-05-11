@@ -88,11 +88,7 @@ public class MovieDatabase {
      * @param rating rating that will be assigned to the movie.
      */
     public void updateRating(final String name, final double rating) {
-        for (Movie mov : movies) {
-            if (mov.getName().equals(name)) {
-                mov.setRating(rating);
-            }
-        }
+        addRating(name, rating);
     }
 
     /**
@@ -100,29 +96,15 @@ public class MovieDatabase {
      * @return best actor name.
      */
     public String getBestActor() {
-        String bestActorName = this.actors.get(0).getName();
-        double averageMovieRating = ratingAverage(this.actors.get(0).getMovies());
+        String bestActorName = "";
+        double averageMovieRating = 0.0;
         for (Actor actor : this.actors) {
-            List<Movie> actorMoviesList = actor.getMovies();
-            if (ratingAverage(actorMoviesList) > averageMovieRating) {
-                averageMovieRating = ratingAverage(actorMoviesList);
+            if (actor.ratingAverage() > averageMovieRating) {
+                averageMovieRating = actor.ratingAverage();
                 bestActorName = actor.getName();
             }
         }
         return bestActorName;
-    }
-
-    /**
-     * method to get the average rating for movies of a given actor.
-     * @param movies list of movies for the actor.
-     * @return average rating.
-     */
-    private double ratingAverage(final List<Movie> movies) {
-        double ratingAvg = 0;
-        for (Movie mov : movies) {
-            ratingAvg += mov.getRating();
-        }
-        return ratingAvg / (movies.size() - 1);
     }
 
     /**

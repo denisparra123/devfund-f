@@ -49,4 +49,16 @@ public class Actor {
     public void setMovies(final List<Movie> movies) {
         this.movies = movies;
     }
+
+    /**
+     * method to get the average rating for movies of a given actor.
+     * @return average rating.
+     */
+    public double ratingAverage() {
+        double ratingAvg = 0;
+        for (Movie mov : this.movies) {
+            ratingAvg += mov.getRating();
+        }
+        return ratingAvg / this.movies.size();
+    }
 }

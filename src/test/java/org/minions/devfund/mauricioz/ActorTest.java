@@ -3,6 +3,9 @@ package org.minions.devfund.mauricioz;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -15,13 +18,23 @@ import static org.junit.Assert.assertEquals;
  */
 public class ActorTest {
     private Actor actor;
+    private Movie mov1;
+    private Movie mov2;
+    private List<Movie> movies;
 
     /**
      * before setup of execution.
      */
     @Before
     public void setUp() {
+
         actor = new Actor();
+        mov1 = new Movie("Avengers Infinity War");
+        mov2 = new Movie("Iron Man");
+        movies = new ArrayList<>();
+        movies.add(mov1);
+        movies.add(mov2);
+        actor.setMovies(movies);
     }
     /**
      * test that actor created is an instance of Actor class.
@@ -41,4 +54,33 @@ public class ActorTest {
         actor.setName(newName);
         assertEquals(newName, actor.getName());
     }
+
+    /**
+     * testing average of the movies where actor acts.
+     */
+    @Test
+    public void testActingAverage() {
+        final double rating1 = 10.0;
+        final double rating2 = 8.5;
+        final double ratingAvg = (rating1 + rating2) / 2;
+        final double delta = 0.001;
+        mov1.setRating(rating1);
+        mov2.setRating(rating2);
+
+        assertEquals(ratingAvg, actor.ratingAverage(), delta);
+    }
+
+    /**
+     * test get movies for an actor.
+     */
+    @Test
+    public void testGetMovies() {
+        List<Movie> moviesOfActor = new ArrayList<>();
+        moviesOfActor.add(mov1);
+        moviesOfActor.add(mov2);
+
+        assertEquals(moviesOfActor, actor.getMovies());
+
+    }
+
 }

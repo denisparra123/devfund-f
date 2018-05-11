@@ -15,6 +15,8 @@ public class MovieDatabaseTest {
     private String movieName;
     private String[] actor;
     private Actor newActor;
+    private String mov1;
+    private String mov2;
 
     /**
      * before test cases setup.
@@ -23,10 +25,15 @@ public class MovieDatabaseTest {
     public void setUp() {
         movieDB = new MovieDatabase();
         movieName = "Sleepers";
-        actor = new String[] {"Brad Pitt"};
+        mov1 = "Avengers Infinity War";
+        mov2 = "Iron Man";
+        actor = new String[] {"Downey Jr."};
         movieDB.addMovie(movieName, actor);
+        movieDB.addMovie(mov1, actor);
+        movieDB.addMovie(mov2, actor);
         newActor = new Actor();
         newActor.setName(actor[0]);
+
 
     }
 
@@ -65,6 +72,20 @@ public class MovieDatabaseTest {
         final double ratingUpdated = 8.0;
         movieDB.updateRating(movieName, ratingUpdated);
         assertEquals(ratingUpdated, movieDB.getMovieList().get(0).getRating());
+    }
+
+    /**
+     * test get best movie.
+     */
+    @Test
+    public void testGetBestMovie() {
+        final double[] rating = {8.0, 10.0, 9.35};
+        int i = 0;
+        for (Movie mov : movieDB.getMovieList()) {
+            mov.setRating(rating[i]);
+            i++;
+        }
+        assertEquals(movieDB.getBestMovie(), movieDB.getMovieList().get(1).getName());
     }
 
 }
