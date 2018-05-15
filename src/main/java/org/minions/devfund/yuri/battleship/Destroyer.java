@@ -1,7 +1,21 @@
 package org.minions.devfund.yuri.battleship;
 
 /**
- * Created by Yuri Vayne on 5/9/2018.
+ * Represents a Destroyer.
  */
-public class Destroyer {
+public class Destroyer extends Ship {
+
+    public static final int SQUARES = 4;
+
+    /**
+     * Constructor method.
+     */
+    public Destroyer() {
+        super();
+        length = SQUARES;
+    }
+    @Override
+    public String getShipType() {
+        return "Destroyer";
+    }
 }
