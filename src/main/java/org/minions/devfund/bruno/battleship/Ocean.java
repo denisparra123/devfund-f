@@ -53,9 +53,9 @@ public class Ocean {
     public void placeAllShipsRandomly() {
         List<String> shipNames = Arrays.asList(BATTLESHIP, BATTLECRUISER, CRUISER, CRUISER, LIGHTCRUISER,
                 LIGHTCRUISER, DESTROYER, DESTROYER, DESTROYER, SUBMARINE, SUBMARINE, SUBMARINE, SUBMARINE);
-        List<Ship> ships = new LinkedList<>();
-        shipNames.forEach(shipName -> ships.add(getStrategyShip(shipName)));
-        ships.forEach(this::generateRandomly);
+        List<Ship> shipsToGenerate = new LinkedList<>();
+        shipNames.forEach(shipName -> shipsToGenerate.add(getStrategyShip(shipName)));
+        shipsToGenerate.forEach(this::generateRandomly);
     }
 
     /**
