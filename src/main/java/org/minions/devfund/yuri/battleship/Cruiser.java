@@ -1,7 +1,21 @@
 package org.minions.devfund.yuri.battleship;
 
 /**
- * Created by Yuri Vayne on 5/9/2018.
+ * Represents to Cruiser.
  */
-public class Cruiser {
+public class Cruiser extends Ship {
+
+    public static final int SQUARES = 6;
+
+    /**
+     * Constructor method.
+     */
+    public Cruiser() {
+        super();
+        length = SQUARES;
+    }
+    @Override
+    public String getShipType() {
+        return "Cruiser";
+    }
 }

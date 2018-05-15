@@ -1,7 +1,21 @@
 package org.minions.devfund.yuri.battleship;
 
 /**
- * Created by Yuri Vayne on 5/9/2018.
+ * Represents to Battle Ship.
  */
-public class BattleShip {
+public class BattleShip extends Ship {
+
+    public static final int SQUARES = 8;
+
+    /**
+     * Constructor Method.
+     */
+    public BattleShip() {
+        super();
+        length = SQUARES;
+    }
+    @Override
+    public String getShipType() {
+        return "BattleShip";
+    }
 }

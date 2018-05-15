@@ -4,11 +4,11 @@ package org.minions.devfund.yuri.battleship;
  * This class represent to ship.
  */
 public abstract class Ship {
-    private int bowRow;
-    private int bowColumn;
-    private int length;
-    private boolean horizontal;
-    private boolean[] hit;
+    protected int bowRow;
+    protected int bowColumn;
+    protected int length;
+    protected boolean horizontal;
+    protected boolean[] hit;
     /**
      * Constructor method.
      */
