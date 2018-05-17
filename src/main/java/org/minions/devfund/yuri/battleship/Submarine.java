@@ -1,5 +1,7 @@
 package org.minions.devfund.yuri.battleship;
 
+import java.util.Arrays;
+
 /**
  * Represents a submarine.
  */
@@ -11,10 +13,14 @@ public class Submarine extends Ship{
      * Constructor Method.
      */
     public Submarine() {
-        super();
-        length = SQUARES;
+        setLength(SQUARES);
+        setHit(new boolean[SQUARES]);
+        Arrays.fill(getHit(), false);
     }
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public String getShipType() {
         return "SubMarine";
