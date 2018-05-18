@@ -5,11 +5,11 @@ package org.minions.devfund.mauricioz.Battleship;
  * @
  */
 public abstract class Ship {
-    private int bowRow;// – the row (0 to 19) which contains the bow (front) of the ship.
-    private int bowColumn;// - the column which contains the bow (front) of the ship.
-    private int length;// – the number of squares occupied by the ship. An ”empty sea” location has length 1.
-    private boolean horizontal;// – true if the ship occupies a single row, false otherwise. Ships will either be placed vertically or horizontally in the ocean.
-    private boolean[] hit;// - this is a boolean array of size 8 that record hits. Only battleships use all the locations. The others will use fewer.
+    private int bowRow;
+    private int bowColumn;
+    private int length;
+    private boolean horizontal;
+    private boolean[] hit;
 
     /**
      * Getter for bowRow attribute.
@@ -87,45 +87,46 @@ public abstract class Ship {
      * Setter for hit attribute.
      * @param hit value.
      */
-    public void setHit(boolean[] hit) {
+    public void setHit(final boolean[] hit) {
         this.hit = hit;
     }
 
     /**
-     *
-     * @return
+     * Abstract method to get the ship type.
+     * @return shipType.
      */
     public abstract String getShipType();
 
     /**
-     *
-     * @param row
-     * @param column
-     * @param horizontal
-     * @param ocean
-     * @return
+     * Method to review if it is possible place a ship on a given coordinates.
+     * @param row coordinate.
+     * @param column coordinate.
+     * @param horizontal position of the ship.
+     * @param ocean object.
+     * @return true or false.
      */
-    public boolean okToPlaceShipAt(int row, int column, boolean horizontal, Ocean ocean) {
+    public boolean okToPlaceShipAt(int row, int column, boolean horizontal, final Ocean ocean) {
         //TODO
         return true;
     }
 
     /**
-     *
-     * @param row
-     * @param column
-     * @param horizontal
-     * @param ocean
+     * action of place a ship onto a valid space into the ocean.
+     * @param row coordinate.
+     * @param column coordinate.
+     * @param horizontal orientation of the ship.
+     * @param ocean object.
      */
-    public void placeShipAt(int row, int column, boolean horizontal, Ocean ocean) {
+    public void placeShipAt(int row, int column, boolean horizontal, final Ocean ocean) {
         //TODO
     }
 
     /**
-     *
-     * @param row
-     * @param column
-     * @return
+     * If a part of the ship occupies the given row and column, and the ship hasn’t been sunk,
+     * mark that part of the ship as ”hit”.
+     * @param row coordinate.
+     * @param column coordinate.
+     * @return true or false
      */
     public boolean shootAt(int row, int column) {
         //TODO
@@ -133,19 +134,22 @@ public abstract class Ship {
     }
 
     /**
-     *
-     * @return
+     * Return true if every part of the ship has been hit, false otherwise.
+     * @return true or false
      */
     public boolean isSunk() {
         return true;
     }
 
     /**
-     *
-     * @return
+     * mark into the ocean the shot.
+     * @return x or S according the result.
      */
     @Override
     public String toString() {
-        return "";
+        if (isSunk()) {
+            return "x";
+        }
+        return "S";
     }
 }
