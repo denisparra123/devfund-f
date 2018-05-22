@@ -15,6 +15,7 @@ public class Ocean {
      */
     public Ocean() {
         this.ships = new EmptySea[OCEAN_SIZE][OCEAN_SIZE];
+        fillEmptyOcean(this.ships);
         this.shotsFired = 0;
         this.shipsSunk = 0;
         this.hitCount = 0;
@@ -50,5 +51,17 @@ public class Ocean {
      */
     public int getShipsSunk() {
         return shipsSunk;
+    }
+
+    /**
+     * populate empty ocean.
+     * @param ships value.
+     */
+    private void fillEmptyOcean(final Ship[][] ships) {
+        for (int i = 0; i < OCEAN_SIZE; i++) {
+            for (int j = 0; j < OCEAN_SIZE; j++) {
+                ships[i][j] = new EmptySea();
+            }
+        }
     }
 }

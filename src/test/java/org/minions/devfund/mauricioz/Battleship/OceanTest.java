@@ -3,6 +3,7 @@ package org.minions.devfund.mauricioz.Battleship;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -27,6 +28,24 @@ public class OceanTest {
     @Test
     public void testEmptySeaIsAShipObject() {
         assertThat(ocean, instanceOf(Ocean.class));
+    }
+
+    /**
+     * verify ocean is empty at the begining of the game.
+     */
+    @Test
+    public void testOceanIsEmptyAtStart() {
+        boolean isEmpty = false;
+        for (int i = 0; i < OCEAN_SIZE; i++) {
+            for (int j = 0; j < OCEAN_SIZE; j++) {
+                if (ocean.getShips()[i][j].getShipType() == "empty") {
+                    isEmpty = true;
+                } else {
+                    isEmpty = false;
+                }
+            }
+        }
+        assertTrue(isEmpty);
     }
 
 }

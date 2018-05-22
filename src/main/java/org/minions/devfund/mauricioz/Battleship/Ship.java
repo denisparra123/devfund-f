@@ -106,8 +106,35 @@ public abstract class Ship {
      * @return true or false.
      */
     public boolean okToPlaceShipAt(int row, int column, boolean horizontal, final Ocean ocean) {
-        //TODO
-        return true;
+        if (startOrFinishOnTheEdge(row, column, ocean) || nothingAround(row, column, horizontal, ocean)) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * verify is not another ship near of the desired position.
+     * @param row value.
+     * @param column value.
+     * @param horizontal ship direction.
+     * @param ocean board.
+     * @return true or false.
+     */
+    private boolean nothingAround(int row, int column, boolean horizontal, final Ocean ocean) {
+        return false;
+    }
+
+    /**
+     * validate ship position is on the edge of the board.
+     * @param row value.
+     * @param column value.
+     * @param ocean board.
+     * @return true or false.
+     */
+    private boolean startOrFinishOnTheEdge(int row, int column, final Ocean ocean) {
+        return row == 0 || column == 0
+                || row + this.getLength() == ocean.getShips().length - 1
+                || column + this.getLength() == ocean.getShips().length - 1;
     }
 
     /**
