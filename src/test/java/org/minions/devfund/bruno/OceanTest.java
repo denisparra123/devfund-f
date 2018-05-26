@@ -56,11 +56,9 @@ public class OceanTest {
         assertEquals(zeroValueExpected, ocean.getHitCount());
         assertEquals(zeroValueExpected, ocean.getShipsSunk());
         assertEquals(zeroValueExpected, ocean.getShotsFired());
-        final int[] shipCountActual = {0};
-        range(0, OCEAN_SIZE).forEach(row ->
-                shipCountActual[0] += Math.toIntExact(range(0, OCEAN_SIZE).filter(col ->
-                        !ocean.getShipArray()[row][col].getShipType().equals(emptyValueExpected)).count()));
-        assertEquals(shipCountExpected, shipCountActual[0]);
+        int shipCountActual = range(0, OCEAN_SIZE).map(row -> Math.toIntExact(range(0, OCEAN_SIZE).filter(col ->
+                !ocean.getShipArray()[row][col].getShipType().equals(emptyValueExpected)).count())).sum();
+        assertEquals(shipCountExpected, shipCountActual);
     }
 
     /**
@@ -143,7 +141,7 @@ public class OceanTest {
                     area.append(row == 0 && col < ship.getLength() ? "x  " : ".  "));
             area.append("\n");
         });
-        assertEquals(area.toString(), ocean.toString());
+        assertEquals(area.toString(), ocean.print());
     }
 
     /**
@@ -172,5 +170,24 @@ public class OceanTest {
             area.append("\n");
         });
         assertEquals(area.toString(), ocean.toString());
+    }
+
+    /**
+     * Testis game over.
+     */
+    @Test
+    public void testIsGameOver() {
+        final int hitCountExpected = 2;
+        final int shipsSunkExpected = 0;
+        final int shotsFiredExpected = 3;
+        BattleShip ship = new BattleShip();
+        ship.placeShipAt(0, 0, true, ocean);
+        ocean.shootAt(0, 0);
+        ocean.shootAt(0, 0);
+        ocean.shootAt(1, 0);
+        assertEquals(hitCountExpected, ocean.getHitCount());
+        assertEquals(shipsSunkExpected, ocean.getShipsSunk());
+        assertEquals(shotsFiredExpected, ocean.getShotsFired());
+        assertFalse(ocean.isGameOver());
     }
 }

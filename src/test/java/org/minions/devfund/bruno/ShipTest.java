@@ -45,13 +45,16 @@ public class ShipTest {
     }
 
     /**
-     * Test is horizontal ship.
+     * Test is vertical ship.
      */
     @Test
-    public void testIsHorizontal() {
+    public void testIsVertical() {
         BattleShip ship = new BattleShip();
-        ship.placeShipAt(0, 0, true, ocean);
-        assertTrue(ship.isHorizontal());
+        ship.placeShipAt(0, 0, false, ocean);
+        assertFalse(ship.isHorizontal());
+        assertFalse(ship.wasShootAt(0, 0));
+        assertTrue(ship.shootAt(0, 0));
+        assertFalse(ship.isBowHit(0, false, 0, 0));
     }
 
     /**

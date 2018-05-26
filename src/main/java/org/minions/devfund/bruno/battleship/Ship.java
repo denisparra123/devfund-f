@@ -196,8 +196,7 @@ public abstract class Ship {
      * @return boolean array hit.
      */
     public boolean[] getHit() {
-        boolean[] newHit = this.hit;
-        return newHit;
+        return hit.clone();
     }
 
     /**

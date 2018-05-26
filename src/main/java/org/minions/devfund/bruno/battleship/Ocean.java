@@ -144,16 +144,11 @@ public class Ocean {
 
     /**
      * Prints the ocean. To aid the user, row numbers should be displayed along the left edge of the array,
-     * and column numbers should be displayed along the top.
-     * Numbers should be 00 to 19, not 1 to 20.
-     * The top left corner square should be 0, 0.
-     * Use 'S' to indicate a location that you have fired upon and hit a (real) ship,
-     * '-' to indicate a location that you have fired upon and found nothing there,
-     * 'x' to indicate a location containing a sunken ship,
-     * and '.' (a period) to indicate a location that you have never fired upon.
+     *
+     * @return the game area.
      */
-    public void print() {
-        System.out.println(toString());
+    public String print() {
+        return toString();
     }
 
     /**
@@ -221,14 +216,5 @@ public class Ocean {
      */
     public boolean isGameOver() {
         return shipsSunk == TOTAL_SHIPS;
-    }
-
-    /**
-     * Sets de ships.
-     *
-     * @param ships boolean
-     */
-    public void setShips(final Ship[][] ships) {
-        this.ships = ships.clone();
     }
 }
