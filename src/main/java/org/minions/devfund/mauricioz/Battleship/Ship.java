@@ -48,7 +48,7 @@ public abstract class Ship {
      * @return hit value.
      */
     public boolean[] getHit() {
-        return hit;
+        return this.hit.clone();
     }
 
     /**
@@ -88,7 +88,10 @@ public abstract class Ship {
      * @param hit value.
      */
     public void setHit(final boolean[] hit) {
-        this.hit = hit;
+        this.hit = new boolean[hit.length];
+        for (int i = 0; i < hit.length; i++) {
+            this.hit[i] = hit[i];
+        }
     }
 
     /**
@@ -121,7 +124,31 @@ public abstract class Ship {
      * @return true or false.
      */
     private boolean nothingAround(int row, int column, boolean horizontal, final Ocean ocean) {
+        if (horizontal && nothingAroundForPlacedHorizontal(row, column, ocean)) {
+            return true;
+        }
         return false;
+    }
+
+    /**
+     * verify is no another ship near of the desired position to place the ship.
+     * @param row value.
+     * @param column value.
+     * @param ocean board.
+     * @return true or false.
+     */
+    private boolean nothingAroundForPlacedHorizontal(int row, int column, final Ocean ocean) {
+        boolean isEmpty = false;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                if (ocean.getShips()[i][j].getShipType() == "empty") {
+                    isEmpty = true;
+                } else {
+                    isEmpty = false;
+                }
+            }
+        }
+        return isEmpty;
     }
 
     /**
