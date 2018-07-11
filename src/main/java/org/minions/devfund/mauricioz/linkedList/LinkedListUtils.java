@@ -107,7 +107,72 @@ public final  class LinkedListUtils {
      * @return return.
      */
     public static boolean containsSubsequence(final LinkedList<Integer> one, final LinkedList<Integer> two) {
-        /* IMPLEMENT THIS METHOD! */
-        return true; // this line is here only so this code will compile if you don't modify it
+        boolean inList;
+        if (one == null || two == null || one.isEmpty() || two.isEmpty()) {
+            return false;
+        }
+        if (!secondHeadInList(two.getFirst(), one)) {
+            inList = false;
+        }
+        else {
+            int index = getIndexOnFirstList(one, two.getFirst());
+            inList = isInFirstSinceIndex(one, two, index);
+        }
+        return inList; // this line is here only so this code will compile if you don't modify it
+    }
+
+    /**
+     *verify if second list is part of first list.
+     * @param one list.
+     * @param two list.
+     * @param index from which position in list one we should start.
+     * @return true or false.
+     */
+    private static boolean isInFirstSinceIndex(final LinkedList<Integer> one, final LinkedList<Integer> two,
+                                               int index) {
+        boolean inList = false;
+        if (index + two.size() > one.size()) {
+            return inList;
+        }
+        for (int i = 0; i < two.size(); i++) {
+            if (one.get(index + i) == two.get(i)) {
+                inList = true;
+            }
+            else {
+                inList = false;
+            }
+        }
+        return inList;
+    }
+
+    /**
+     * get the index where first element of second list appear in the first list.
+     * @param one list.
+     * @param first element of the second list
+     * @return index.
+     */
+    private static int getIndexOnFirstList(final LinkedList<Integer> one, final Integer first) {
+        int index = 0;
+        for (int i = 0; i < one.size(); i++) {
+            if (first == one.get(i)) {
+                index = i;
+            }
+        }
+        return  index;
+    }
+
+    /**
+     * review if first element of second list appears in some point in list one.
+     * @param first value of second list.
+     * @param one first list.
+     * @return true or false.
+     */
+    private static boolean secondHeadInList(final Integer first, final LinkedList<Integer> one) {
+        for (int i = 0; i < one.size(); i++) {
+            if (first == one.get(i)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
