@@ -28,20 +28,15 @@ public final  class LinkedListUtils {
 
             list.addFirst(value);
 
-        }
-
-        else {
+        } else {
             int index = list.size();
             if (value <= list.getFirst()) {
                 list.addFirst(value);
 
-            }
-
-            else if (value >= list.getLast()) {
+            } else if (value >= list.getLast()) {
                 list.addLast(value);
 
-            }
-            else {
+            } else {
                 for (int i = 1; i < index; i++) {
                     if (value <= list.get(i)) {
                         list.add(i, value);
@@ -61,9 +56,7 @@ public final  class LinkedListUtils {
         /* IMPLEMENT THIS METHOD! */
         if (n < 0 || list == null) {
             return;
-        }
-        else {
-            int index = list.size();
+        } else {
             for (int j = n; j > 0; j--) {
                 if (!list.isEmpty()) {
                     removeElementOfTheList(list);
@@ -113,8 +106,7 @@ public final  class LinkedListUtils {
         }
         if (!secondHeadInList(two.getFirst(), one)) {
             inList = false;
-        }
-        else {
+        } else {
             int index = getIndexOnFirstList(one, two.getFirst());
             inList = isInFirstSinceIndex(one, two, index);
         }
@@ -137,8 +129,7 @@ public final  class LinkedListUtils {
         for (int i = 0; i < two.size(); i++) {
             if (one.get(index + i) == two.get(i)) {
                 inList = true;
-            }
-            else {
+            } else {
                 inList = false;
             }
         }
@@ -154,7 +145,7 @@ public final  class LinkedListUtils {
     private static int getIndexOnFirstList(final LinkedList<Integer> one, final Integer first) {
         int index = 0;
         for (int i = 0; i < one.size(); i++) {
-            if (first == one.get(i)) {
+            if (first.equals(one.get(i))) {
                 index = i;
             }
         }
@@ -169,7 +160,7 @@ public final  class LinkedListUtils {
      */
     private static boolean secondHeadInList(final Integer first, final LinkedList<Integer> one) {
         for (int i = 0; i < one.size(); i++) {
-            if (first == one.get(i)) {
+            if (first.equals(one.get(i))) {
                 return true;
             }
         }

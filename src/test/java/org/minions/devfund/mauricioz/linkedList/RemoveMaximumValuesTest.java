@@ -1,16 +1,22 @@
 package org.minions.devfund.mauricioz.linkedList;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
+
 
 import java.util.LinkedList;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ // Source code recreated from a .class file by IntelliJ IDEA.
+ // (powered by Fernflower decompiler)
+ */
 public class RemoveMaximumValuesTest {
+    private static final int LISTSIZE1 = 3;
+    private static final int LISTSIZE2 = 4;
+    /**
+     * constructor.
+     */
     public RemoveMaximumValuesTest() {
     }
 
@@ -18,7 +24,7 @@ public class RemoveMaximumValuesTest {
      * setup for tests.
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
     }
 
     /**
@@ -27,7 +33,7 @@ public class RemoveMaximumValuesTest {
     @Test
     public void testNull() {
         try {
-            LinkedListUtils.removeMaximumValues((LinkedList)null, 2);
+            LinkedListUtils.removeMaximumValues((LinkedList) null, 2);
         } catch (Exception var2) {
             Assert.fail("removeMaximumValues throws " + var2 + " when input LinkedList is null");
         }
@@ -50,11 +56,13 @@ public class RemoveMaximumValuesTest {
         }
 
         if (var1.size() < 2) {
-            Assert.fail("removeMaximumValues removes elements from LinkedList when number of elenents to remove is negative");
+            Assert.fail("removeMaximumValues removes elements from LinkedList when number of elenents to remove is "
+                    + "negative");
         }
 
         if (var1.size() > 2) {
-            Assert.fail("removeMaximumValues adds elements to LinkedList when number of elenents to remove is negative");
+            Assert.fail("removeMaximumValues adds elements to LinkedList when number of elenents to remove is "
+                    + "negative");
         }
 
     }
@@ -72,7 +80,8 @@ public class RemoveMaximumValuesTest {
             Assert.fail("removeMaximumValues throws " + var3 + " when input LinkedList is empty");
         }
 
-        Assert.assertTrue("removeMaximumValues adds elements to list when input LinkedList is empty", var1.isEmpty());
+        Assert.assertTrue("removeMaximumValues adds elements to list when input LinkedList is empty",
+                var1.isEmpty());
     }
 
     /**
@@ -86,10 +95,12 @@ public class RemoveMaximumValuesTest {
         try {
             LinkedListUtils.removeMaximumValues(var1, 2);
         } catch (Exception var3) {
-            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove is greater than size of input LinkedList");
+            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove is greater than "
+                    + "size of input LinkedList");
         }
 
-        Assert.assertTrue("removeMaximumValues does not remove all elements when number of elements to remove is greater than size of input LinkedList", var1.isEmpty());
+        Assert.assertTrue("removeMaximumValues does not remove all elements when number of elements to "
+                + "remove is greater than size of input LinkedList", var1.isEmpty());
     }
 
     /**
@@ -103,10 +114,12 @@ public class RemoveMaximumValuesTest {
         try {
             LinkedListUtils.removeMaximumValues(var1, 1);
         } catch (Exception var3) {
-            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove equals size of input LinkedList");
+            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove equals size of "
+                    + "input LinkedList");
         }
 
-        Assert.assertTrue("removeMaximumValues does not remove all elements when number of elements to remove equals size of input LinkedList", var1.isEmpty());
+        Assert.assertTrue("removeMaximumValues does not remove all elements when number of elements to "
+                + "remove equals size of input LinkedList", var1.isEmpty());
     }
 
     /**
@@ -124,24 +137,31 @@ public class RemoveMaximumValuesTest {
         try {
             LinkedListUtils.removeMaximumValues(var1, 2);
         } catch (Exception var3) {
-            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove is less than size of input");
+            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove is less than size "
+                    + "of input");
         }
 
-        if (var1.size() < 3) {
-            Assert.fail("removeMaximumValues removes too many elements from LinkedList when number of elements to remove is less than size of input");
+        if (var1.size() < LISTSIZE1) {
+            Assert.fail("removeMaximumValues removes too many elements from LinkedList when number of elements to "
+                    + "remove is less than size of input");
         }
 
-        if (var1.size() > 3) {
-            Assert.fail("removeMaximumValues does not remove enough elements from LinkedList when number of elements to remove is less than size of input");
+        if (var1.size() > LISTSIZE1) {
+            Assert.fail("removeMaximumValues does not remove enough elements from LinkedList when number of elements "
+                    + "to remove is less than size of input");
         }
 
         if (var1.contains("kangaroo") || var1.contains("koala")) {
-            Assert.fail("removeMaximumValues does not remove correct elements from LinkedList when number of elements to remove is less than size of input");
+            Assert.fail("removeMaximumValues does not remove correct elements from LinkedList when number of "
+                    + "elements to remove is less than size of input");
         }
 
-        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input", ((String)var1.get(0)).equals("doge"));
-        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input", ((String)var1.get(1)).equals("cat"));
-        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input", ((String)var1.get(2)).equals("bear"));
+        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of "
+                + "elements to remove is less than size of input", ((String) var1.get(0)).equals("doge"));
+        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of "
+                + "elements to remove is less than size of input", ((String) var1.get(1)).equals("cat"));
+        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of "
+                + "elements to remove is less than size of input", ((String) var1.get(2)).equals("bear"));
     }
 
     /**
@@ -163,24 +183,37 @@ public class RemoveMaximumValuesTest {
         try {
             LinkedListUtils.removeMaximumValues(var1, 2);
         } catch (Exception var3) {
-            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove is less than size of input and maximum elements appear more than once");
+            Assert.fail("removeMaximumValues throws " + var3 + " when number of elements to remove is less than "
+                    + "size of input and maximum elements appear more than once");
         }
 
-        if (var1.size() < 4) {
-            Assert.fail("removeMaximumValues removes too many elements from LinkedList when number of elements to remove is less than size of input and maximum elements appear more than once");
+        if (var1.size() < LISTSIZE2) {
+            Assert.fail("removeMaximumValues removes too many elements from LinkedList when number of elements to "
+                    + "remove is less than size of input and maximum elements appear more than once");
         }
 
         if (var1.contains("kangaroo") || var1.contains("koala")) {
-            Assert.fail("removeMaximumValues does not remove all instances of max elements from LinkedList when number of elements to remove is less than size of input and maximum elements appear more than once");
+            Assert.fail("removeMaximumValues does not remove all instances of max elements from LinkedList when "
+                    + "number of elements to remove is less than size of input and maximum elements appear more "
+                    + "than once");
         }
 
-        if (var1.size() > 4) {
-            Assert.fail("removeMaximumValues does not remove enough elements from LinkedList when number of elements to remove is less than size of input and maximum elements appear more than once");
+        if (var1.size() > LISTSIZE2) {
+            Assert.fail("removeMaximumValues does not remove enough elements from LinkedList when number of elements "
+                    + "to remove is less than size of input and maximum elements appear more than once");
         }
 
-        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input and maximum elements appear more than once", ((String)var1.get(0)).equals("doge"));
-        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input and maximum elements appear more than once", ((String)var1.get(1)).equals("cat"));
-        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input and maximum elements appear more than once", ((String)var1.get(2)).equals("bear"));
-        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input and maximum elements appear more than once", ((String)var1.get(3)).equals("doge"));
+        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of "
+                + "elements to remove is less than size of input and maximum elements appear more than once",
+                ((String) var1.get(0)).equals("doge"));
+        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of "
+                + "elements to remove is less than size of input and maximum elements appear more than once",
+                ((String) var1.get(1)).equals("cat"));
+        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of "
+                + "elements to remove is less than size of input and maximum elements appear more than once",
+                ((String) var1.get(2)).equals("bear"));
+        Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of "
+                + "elements to remove is less than size of input and maximum elements appear more than once",
+                ((String) var1.get(LISTSIZE1)).equals("doge"));
     }
 }
