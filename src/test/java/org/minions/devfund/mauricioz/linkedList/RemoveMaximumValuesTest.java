@@ -4,7 +4,6 @@ package org.minions.devfund.mauricioz.linkedList;
 
 import java.util.LinkedList;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -14,18 +13,6 @@ import org.junit.Test;
 public class RemoveMaximumValuesTest {
     private static final int LISTSIZE1 = 3;
     private static final int LISTSIZE2 = 4;
-    /**
-     * constructor.
-     */
-    public RemoveMaximumValuesTest() {
-    }
-
-    /**
-     * setup for tests.
-     */
-    @Before
-    public void setUp() {
-    }
 
     /**
      * test.

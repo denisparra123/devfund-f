@@ -2,7 +2,6 @@ package org.minions.devfund.mauricioz.linkedList;
 
 import java.util.LinkedList;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -19,20 +18,9 @@ public class ContainsTest {
     private static final int LIST2EXTRAVALUE2 = 7;
     private static final int LIST2EXTRAVALUE3 = 9;
     private static final int LIST2EXTRAVALUE4 = 2;
-
-    /**
-     * constructor.
-     */
-    public ContainsTest() {
-    }
-
-    /**
-     * setup for tests.
-     * @throws Exception
-     */
-    @Before
-    public void setUp() {
-    }
+    private static final String MSG1 = "containsSubsequence returns true when first LinkedList contains all elements";
+    private static final String MSG2 = "when first LinkedList contains second";
+    private static final String MSG3 = "containsSubsequence throws";
 
     /**
      * test.
@@ -52,11 +40,10 @@ public class ContainsTest {
 
         try {
             boolean var3 = LinkedListUtils.containsSubsequence(var1, var2);
-            Assert.assertTrue("containsSubsequence returns false when first LinkedList contains second in "
+            Assert.assertTrue("containsSubsequence returns false " + MSG2 + " in "
                     + "middle of list", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first LinkedList contains second "
-                    + "in middle of list");
+            Assert.fail(MSG3 + var4 + MSG2 + " in middle of list");
         }
 
     }
@@ -79,11 +66,9 @@ public class ContainsTest {
 
         try {
             boolean var3 = LinkedListUtils.containsSubsequence(var1, var2);
-            Assert.assertTrue("containsSubsequence returns false when first LinkedList contains second at "
-                    + "front of list", var3);
+            Assert.assertTrue("containsSubsequence returns false " + MSG2 + " at front of list", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first LinkedList contains second "
-                    + "at front of list");
+            Assert.fail(MSG3 + var4 + MSG2 + "at front of list");
         }
 
     }
@@ -106,11 +91,9 @@ public class ContainsTest {
 
         try {
             boolean var3 = LinkedListUtils.containsSubsequence(var1, var2);
-            Assert.assertTrue("containsSubsequence returns false when first LinkedList contains second at "
-                    + "rear of list", var3);
+            Assert.assertTrue("containsSubsequence returns false " + MSG2 + " at rear of list", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first LinkedList contains second "
-                    + "at rear of list");
+            Assert.fail(MSG3 + var4 + MSG2 + " at rear of list");
         }
 
     }
@@ -136,8 +119,7 @@ public class ContainsTest {
             Assert.assertFalse("containsSubsequence returns true when lists have no overlapping elements",
                     var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when lists have no overlapping "
-                    + "elements");
+            Assert.fail(MSG3 + var4 + " when lists have no overlapping elements");
         }
 
     }
@@ -163,8 +145,8 @@ public class ContainsTest {
             Assert.assertFalse("containsSubsequence returns true when lists have some overlapping elements "
                     + "but first does not contain all elements of second", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when lists have some overlapping "
-                    + "elements but first does not contain all elements of second");
+            Assert.fail(MSG3 + var4 + " when lists have some overlapping elements but first does not contain all "
+                    + "elements of second");
         }
 
     }
@@ -187,11 +169,9 @@ public class ContainsTest {
 
         try {
             boolean var3 = LinkedListUtils.containsSubsequence(var1, var2);
-            Assert.assertFalse("containsSubsequence returns true when first LinkedList contains all elements "
-                    + "of second but not in same order", var3);
+            Assert.assertFalse(MSG1 + "of second but not in same order", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first LinkedList contains all"
-                    + " elements of second but not in same order");
+            Assert.fail(MSG3 + var4 + " when first LinkedList contains all elements of second but not in same order");
         }
 
     }
@@ -214,11 +194,10 @@ public class ContainsTest {
 
         try {
             boolean var3 = LinkedListUtils.containsSubsequence(var1, var2);
-            Assert.assertFalse("containsSubsequence returns true when first LinkedList contains all elements "
-                    + "of second but with other elements in sequence", var3);
+            Assert.assertFalse(MSG1 + "of second but with other elements in sequence", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first LinkedList contains all "
-                    + "elements of second but with other elements in sequence");
+            Assert.fail(MSG3 + var4 + " when first LinkedList contains all elements of second but with other "
+                    + "elements in sequence");
         }
 
     }
@@ -242,11 +221,10 @@ public class ContainsTest {
 
         try {
             boolean var3 = LinkedListUtils.containsSubsequence(var1, var2);
-            Assert.assertFalse("containsSubsequence returns true when first LinkedList contains all elements "
-                    + "of second but with other elements in sequence", var3);
+            Assert.assertFalse(MSG1 + "of second but with other elements in sequence", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first LinkedList contains all "
-                    + "elements of second but with other elements in sequence");
+            Assert.fail(MSG3 + var4 + " when first LinkedList contains all elements of second but with other "
+                    + "elements in sequence");
         }
 
     }
@@ -272,8 +250,8 @@ public class ContainsTest {
             Assert.assertFalse("containsSubsequence returns true when lists overlap at end of first "
                     + "LinkedList but it does not contain all elements of second", var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when lists overlap at end of first "
-                    + "LinkedList but it does not contain all elements of second");
+            Assert.fail(MSG3 + var4 + " when lists overlap at end of first LinkedList but it does not contain all "
+                    + "elements of second");
         }
 
     }
@@ -293,7 +271,7 @@ public class ContainsTest {
             Assert.assertFalse("containsSubsequence returns true when first input is null",
                     var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first input is null");
+            Assert.fail(MSG3 + var4 + " when first input is null");
         }
 
     }
@@ -315,7 +293,7 @@ public class ContainsTest {
             Assert.assertFalse("containsSubsequence returns true when second input is null",
                     var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws  " + var4 + " when second input is null");
+            Assert.fail(MSG3 + var4 + " when second input is null");
         }
 
     }
@@ -336,7 +314,7 @@ public class ContainsTest {
             Assert.assertFalse("containsSubsequence returns true when first input is empty",
                     var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when first input is empty");
+            Assert.fail(MSG3 + var4 + " when first input is empty");
         }
 
     }
@@ -359,7 +337,7 @@ public class ContainsTest {
             Assert.assertFalse("containsSubsequence returns true when second input is empty",
                     var3);
         } catch (Exception var4) {
-            Assert.fail("containsSubsequence throws " + var4 + " when second input is empty");
+            Assert.fail(MSG3 + var4 + " when second input is empty");
         }
 
     }

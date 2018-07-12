@@ -2,7 +2,6 @@ package org.minions.devfund.mauricioz.linkedList;
 
 import java.util.LinkedList;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -22,18 +21,6 @@ public class InsertSortedTest {
     private static final int LISTNEWVALUE3 = 1;
 
     private static final int LISTPOSITION3 = 3;
-    /**
-     * constructor.
-     */
-    public InsertSortedTest() {
-    }
-
-    /**
-     * setup for test.
-     */
-    @Before
-    public void setUp() {
-    }
 
     /**
      * test.
