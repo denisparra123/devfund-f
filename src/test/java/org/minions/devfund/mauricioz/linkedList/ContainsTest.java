@@ -1,23 +1,29 @@
 package org.minions.devfund.mauricioz.linkedList;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 import java.util.LinkedList;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ Source code recreated from a .class file by IntelliJ IDEA
+ (powered by Fernflower decompiler)
+ */
 public class ContainsTest {
     public ContainsTest() {
     }
 
+    /**
+     * setup for tests.
+     * @throws Exception
+     */
     @Before
     public void setUp() throws Exception {
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testContainsMiddle() {
         LinkedList var1 = new LinkedList();
@@ -40,6 +46,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testContainsFront() {
         LinkedList var1 = new LinkedList();
@@ -62,6 +71,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testContainsRear() {
         LinkedList var1 = new LinkedList();
@@ -84,6 +96,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testNoOverlap() {
         LinkedList var1 = new LinkedList();
@@ -106,6 +121,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testSomeOverlap() {
         LinkedList var1 = new LinkedList();
@@ -128,6 +146,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testOverlapWrongOrder() {
         LinkedList var1 = new LinkedList();
@@ -150,6 +171,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testOverlapOtherElementsInSequenceInOne() {
         LinkedList var1 = new LinkedList();
@@ -172,6 +196,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testOverlapOtherElementsInSequenceInTwo() {
         LinkedList var1 = new LinkedList();
@@ -195,6 +222,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testOverlapAtEndOfOne() {
         LinkedList var1 = new LinkedList();
@@ -217,6 +247,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testFirstNull() {
         LinkedList var1 = new LinkedList();
@@ -239,6 +272,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testSecondNull() {
         LinkedList var1 = new LinkedList();
@@ -261,6 +297,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testFirstEmpty() {
         LinkedList var1 = new LinkedList();
@@ -278,6 +317,9 @@ public class ContainsTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testSecondEmpty() {
         LinkedList var1 = new LinkedList();

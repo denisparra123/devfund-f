@@ -1,23 +1,28 @@
 package org.minions.devfund.mauricioz.linkedList;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 import java.util.LinkedList;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+*/
 public class InsertSortedTest {
     public InsertSortedTest() {
     }
 
+    /**
+     * setup for test.
+     */
     @Before
     public void setUp() throws Exception {
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testInsertMiddle() {
         LinkedList var1 = new LinkedList();
@@ -38,6 +43,9 @@ public class InsertSortedTest {
         Assert.assertTrue("insertSorted does not correctly insert element when placing value in middle of list", (Integer)var1.get(3) == 11);
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testInsertEnd() {
         LinkedList var1 = new LinkedList();
@@ -58,6 +66,9 @@ public class InsertSortedTest {
         Assert.assertTrue("insertSorted does not correctly insert element when placing value at end of list", (Integer)var1.get(3) == 14);
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testInsertFront() {
         LinkedList var1 = new LinkedList();
@@ -78,6 +89,9 @@ public class InsertSortedTest {
         Assert.assertTrue("insertSorted does not correctly insert element when placing value at front of list", (Integer)var1.get(3) == 11);
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testInsertMiddleEqualToExistingElement() {
         LinkedList var1 = new LinkedList();
@@ -98,6 +112,9 @@ public class InsertSortedTest {
         Assert.assertTrue("insertSorted does not correctly insert element when placing value that is equal to value already in list", (Integer)var1.get(3) == 11);
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testNull() {
         try {
@@ -108,6 +125,9 @@ public class InsertSortedTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testInsertEmpty() {
         LinkedList var1 = new LinkedList();

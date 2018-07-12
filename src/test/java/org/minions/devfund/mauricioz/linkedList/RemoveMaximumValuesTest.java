@@ -14,10 +14,16 @@ public class RemoveMaximumValuesTest {
     public RemoveMaximumValuesTest() {
     }
 
+    /**
+     * setup for tests.
+     */
     @Before
     public void setUp() throws Exception {
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testNull() {
         try {
@@ -28,6 +34,9 @@ public class RemoveMaximumValuesTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testNegativeSize() {
         LinkedList var1 = new LinkedList();
@@ -50,6 +59,9 @@ public class RemoveMaximumValuesTest {
 
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testInsertEmpty() {
         LinkedList var1 = new LinkedList();
@@ -63,6 +75,9 @@ public class RemoveMaximumValuesTest {
         Assert.assertTrue("removeMaximumValues adds elements to list when input LinkedList is empty", var1.isEmpty());
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testRemoveGreaterThanSize() {
         LinkedList var1 = new LinkedList();
@@ -77,6 +92,9 @@ public class RemoveMaximumValuesTest {
         Assert.assertTrue("removeMaximumValues does not remove all elements when number of elements to remove is greater than size of input LinkedList", var1.isEmpty());
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testRemoveEqualsSize() {
         LinkedList var1 = new LinkedList();
@@ -91,6 +109,9 @@ public class RemoveMaximumValuesTest {
         Assert.assertTrue("removeMaximumValues does not remove all elements when number of elements to remove equals size of input LinkedList", var1.isEmpty());
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testEachMaxAppearsOnce() {
         LinkedList var1 = new LinkedList();
@@ -123,6 +144,9 @@ public class RemoveMaximumValuesTest {
         Assert.assertTrue("removeMaximumValues does not have elements in correct order when number of elements to remove is less than size of input", ((String)var1.get(2)).equals("bear"));
     }
 
+    /**
+     * test.
+     */
     @Test
     public void testMaxValuesAppearMoreThanOnce() {
         LinkedList var1 = new LinkedList();
