@@ -12,7 +12,7 @@ public final  class LinkedListUtils {
      * constructor.
      */
     private LinkedListUtils() {
-        return;
+
     }
     /**
      * This method will add an element on a sorted list.
@@ -20,29 +20,25 @@ public final  class LinkedListUtils {
      * @param value a value.
      */
     public static void insertSorted(final LinkedList<Integer> list, int value) {
-        /* IMPLEMENT THIS METHOD! */
         if (list == null) {
             return;
         }
         if (list.isEmpty()) {
-
             list.addFirst(value);
-
-        } else {
-            int index = list.size();
-            if (value <= list.getFirst()) {
-                list.addFirst(value);
-
-            } else if (value >= list.getLast()) {
-                list.addLast(value);
-
-            } else {
-                for (int i = 1; i < index; i++) {
-                    if (value <= list.get(i)) {
-                        list.add(i, value);
-                        return;
-                    }
-                }
+            return;
+        }
+        int index = list.size();
+        if (value <= list.getFirst()) {
+            list.addFirst(value);
+            return;
+        }
+        if (value >= list.getLast()) {
+            list.addLast(value);
+        }
+        for (int i = 1; i < index; i++) {
+            if (value <= list.get(i)) {
+                list.add(i, value);
+                return;
             }
         }
     }
@@ -53,14 +49,12 @@ public final  class LinkedListUtils {
      * @param n index
      */
     public static void removeMaximumValues(final LinkedList<String> list, int n) {
-        /* IMPLEMENT THIS METHOD! */
         if (n < 0 || list == null) {
             return;
-        } else {
-            for (int j = n; j > 0; j--) {
-                if (!list.isEmpty()) {
-                    removeElementOfTheList(list);
-                }
+        }
+        for (int j = n; j > 0; j--) {
+            if (!list.isEmpty()) {
+                removeElementOfTheList(list);
             }
         }
     }
